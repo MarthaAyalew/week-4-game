@@ -37,7 +37,7 @@ $(document).ready(function () {
         $("#yourScore").html(currentScore);
 
 
-        checkWin();
+        //checkWin();
 
         console.log("your total score: " + currentScore);
 
@@ -47,9 +47,10 @@ $(document).ready(function () {
         if (currentScore > targetScore) {
             alert("you lost");
             console.log("you lost");
-            lossCount++;
-            $("#lossCount").html(lossCount);
+            losseCount++;
+            $("#loss").html(losseCount);
             startGame();
+        
 
         }
 
@@ -57,8 +58,9 @@ $(document).ready(function () {
             alert("you won!");
             console.log("you won");
             winCount++;
-            $("#winCount").html(winCount);
+            $("#wins").html(winCount);
             startGame();
+            // checkWin();
         }        
 
     }
@@ -68,27 +70,31 @@ $(document).ready(function () {
 
     //main process
     startGame();
-
+    
     $("#one").click(function () {
         console.log("one: " + crystalOne);
         currentScore += crystalOne;
         $("#yourScore").html(currentScore);
+        checkWin();
     });
 
     $("#two").click(function () {
         currentScore += crystalTwo;
         $("#yourScore").html(currentScore);
+        checkWin();
     });
 
     $("#three").click(function () {
         currentScore += crystalThree;
         $("#yourScore").html(currentScore);
+        checkWin();
 
     });
 
     $("#four").click(function () {
         currentScore += crystalFour;
         $("#yourScore").html(currentScore);
+        checkWin();
 
     });
 });
